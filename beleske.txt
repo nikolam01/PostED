@@ -1,0 +1,4 @@
+Sta zelim sa frontend index.js -om:
+
+1. Da uzme podatke iz baze i ubaci ih u html
+2. klikom na dugme submit posalje podatke u bazu i da se reloduje stranica i da se taj post prikaze

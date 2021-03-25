@@ -1,0 +1,255 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/back.jpg);
+    height: 150vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.post-id {
+    font-size: 12px;
+    font-weight: 900;
+    color: rgb(161, 161, 161);
+    margin-bottom: 10px;
+    display: none;
+}
+
+#commentSign {
+    color: white;
+    font-size: 20px;
+    text-align: left !important;
+}
+
+#nav-bar {
+    display: block;
+    text-align: right;
+    margin: 1% 5%;
+    font-size: 24px;
+}
+
+#nav-bar a {
+    margin-right: 5%;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+.input-btn {
+    text-align: center;
+    margin-top: 5%;
+}
+
+#objavi-btn {
+    width: 10%;
+    color: white;
+    font-size: 22px;
+    padding: 5px;
+    background-color: black;
+    border: 1px solid darkblue;
+    cursor: pointer;
+    margin-bottom: 2%;
+}
+
+#objavi-btn:focus {
+    outline: 0 !important;
+}
+
+.input-block {
+    display: none;
+}
+
+.input-author {
+    width: 70%;
+    background-color: transparent;
+    border: 3px solid darkblue;
+    margin: 1% 15%;
+    margin-bottom: 0.3%;
+    height: 5vh;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+}
+
+.input-text {
+    width: 70%;
+    background-color: transparent;
+    border: 3px solid darkblue;
+    margin: 0% 15%;
+    height: 18vh;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+}
+
+.input-text:focus {
+    outline: none;
+}
+
+.input-author:focus {
+    outline: none;
+}
+
+.submitBtn {
+    width: 10%;
+    background-color: black;
+    border: 1px solid darkred;
+    margin: 1% 45%;
+    text-align: center;
+    height: 5vh;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.submitBtn:focus {
+    outline: 0 !important;
+}
+
+.post {
+    color: white;
+    width: 70%;
+    margin: 0.5% auto;
+    border: 3px solid darkblue;
+    height: 22vh;
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.author {
+    font-size: 20px;
+    text-align: left;
+}
+
+.post-time {
+    font-size: 14px;
+    text-align: right;
+    color: gray;
+}
+
+.text {
+    font-size: 18px;
+    height: 12vh;
+    margin: 10px 0px;
+    text-align: justify;
+}
+
+.post-footer {
+    vertical-align: bottom;
+    text-align: right;
+    color: gray;
+}
+
+.commentsNumber {
+    font-size: 14px;
+    text-align: right;
+}
+
+.fa-thumbs-up {
+    text-align: right;
+}
+
+@media (max-width:840px) {
+    .post {
+        width: 98%;
+        margin: 5% auto;
+        height: 30vh;
+    }
+    .text,
+    .author {
+        font-size: 16px;
+    }
+    .post-time,
+    .commentsNumber {
+        font-size: 12px;
+    }
+    .text {
+        height: 20vh;
+    }
+    #objavi-btn {
+        width: 30%;
+        font-size: 16px;
+        margin-bottom: 2%;
+    }
+    #nav-bar a {
+        font-size: 20px;
+    }
+    #nav-bar {
+        margin-bottom: 10%;
+    }
+    .input-author {
+        width: 98%;
+        margin: 2% 1%;
+        font-size: 16px;
+    }
+    .input-text {
+        width: 98%;
+        margin: 2% 1%;
+        font-size: 16px;
+    }
+    .submitBtn {
+        width: 30%;
+        font-size: 16px;
+        margin: 1% 35%;
+    }
+}
+
+@media (max-width:540px) {
+    .post {
+        width: 98%;
+        margin: 5% auto;
+        height: 32vh;
+    }
+    .text,
+    .author {
+        font-size: 14px;
+    }
+    .post-time,
+    .commentsNumber {
+        font-size: 10px;
+    }
+    .text {
+        height: 22vh;
+    }
+    #objavi-btn {
+        width: 40%;
+        font-size: 14px;
+        margin-bottom: 2%;
+    }
+    #nav-bar a {
+        font-size: 18px;
+    }
+    #nav-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 10%;
+    }
+    .input-author {
+        width: 98%;
+        margin: 2% 1%;
+        font-size: 14px;
+    }
+    .input-text {
+        width: 98%;
+        margin: 2% 1%;
+        font-size: 14px;
+    }
+    .submitBtn {
+        width: 40%;
+        font-size: 14px;
+        margin: 1% 30%;
+    }
+}
