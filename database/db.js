@@ -8,7 +8,7 @@ async function connectDB() {
             useUnifiedTopology: true,
         });
 
-        console.log("Baza konektovana");
+        console.log("Baza za komentare konektovana!");
     } catch (err) {
         console.log(`Error: ${err.message}`);
     }

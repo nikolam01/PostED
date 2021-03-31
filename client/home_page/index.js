@@ -113,7 +113,6 @@ function createPostDiv(post) {
     return div;
 }
 
-
 //----------------------Dugme Publish Post i fije da kada ga kliknemo pokaze input polja------------------------------------
 const inputBtn = document.querySelector("#objavi-btn");
 const inputBlock = document.querySelector(".input-block");

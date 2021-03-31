@@ -1,11 +1,16 @@
+const dotenv = require("dotenv");
 const express = require("express");
 const app = express();
-const { getAllPosts, addNewPost } = require("./database/static-db.js");
+//const { getAllPosts, addNewPost } = require("./database/static-db.js");
 const connectDB = require("./database/db");
+const connectContactDB = require("./database/db_contact");
 const Post = require("./database/Post.js");
-const dotenv = require("dotenv");
+const Contact = require('./database/Contact');
 
 dotenv.config();
+
+
+
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
@@ -13,6 +18,7 @@ app.listen(PORT, () => {
 });
 
 connectDB();
+connectContactDB();
 
 
 app.use(express.static("client"));
@@ -120,6 +126,65 @@ app.post("/api/comment", async(req, res) => {
     }
 
 });
+
+
+//----------------------------------------Contact strana------------------------------------------------
+app.get('/api/contact', (req, res) => {
+    try {
+        res.json({
+            success: true,
+            msg: "Uspesan get request",
+
+        });
+
+
+    } catch (err) {
+        res.json({
+            success: true,
+            msg: err.message,
+        })
+    }
+
+});
+
+
+
+app.post('/api/contact', async(req, res) => {
+    try {
+        const name = req.body.name;
+        const email = req.body.email;
+        const phone = req.body.phone;
+        const message = req.body.message;
+
+        const newContact = new Contact({
+            name: name,
+            email: email,
+            phone: phone,
+            message: message,
+        });
+
+        const savedContact = await newContact.save();
+
+        res.json({
+            success: true,
+            contact: savedContact,
+            msg: 'This is a contact res.json!',
+
+
+        });
+
+    } catch (err) {
+        res.json({
+            success: true,
+            msg: err.message,
+        });
+
+    }
+
+});
+
+
+//-----------------------------------------------------------------------------------------------------
 
 
 
