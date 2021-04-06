@@ -1,8 +1,22 @@
 //const ContactSchema = require(".../database/contact_scheme");
+let contacts;
 
-const submitBtn = document.querySelector('.submit');
+getContacts(); //ovde pozivamo asinhronu fiju od dole odnosno trazimo podatke od servera
 
-submitBtn.addEventListener('click', async() => {
+async function getContacts() {
+
+    const resp = await axios.get("/api/contacts"); //uzmi info sa te rute i console loguj je
+
+    contacts = resp.data.contacts;
+
+    console.log(contacts);
+
+
+};
+
+const submitBtn = document.querySelector('.submitBtn');
+
+submitBtn.addEventListener('click', async () => {
 
     console.log("kliknuto");
     const nameInput = document.querySelector('.nameInpt');
@@ -19,16 +33,15 @@ submitBtn.addEventListener('click', async() => {
     if (name == "" || email == "" || phone == "" || message == "") {
         alert("Popunite kako treba!");
         return;
-    } else {
-
-        const resp = await axios.post("/api/contact", {
-            name: '',
-            email: '',
-            phone: '',
-            message: '',
-        });
-        console.log(resp.data);
-        location.reload();
-
     }
+    const resp = await axios.post("/api/contacts", {
+        name,
+        email,
+        phone,
+        message,
+    });
+    console.log(resp.data);
+    alert("Thank you for your submission!");
+    location.reload();
+
 });

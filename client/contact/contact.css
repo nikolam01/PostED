@@ -77,7 +77,7 @@
                 padding: 5px;
             }
             
-            .submit {
+            .submitBtn {
                 grid-area: submit;
                 width: 10%;
                 height: auto;
@@ -85,9 +85,10 @@
                 font-size: 20px;
                 color: black;
                 border: 3px solid darkblue;
+                cursor: pointer;
             }
             
-            .submit,
+            .submitBtn,
             .emailInpt,
             .nameInpt,
             .phoneInpt,
@@ -161,7 +162,7 @@
                     height: 60vh;
                     font-size: 20px;
                 }
-                .submit {
+                .submitBtn {
                     width: 30%;
                 }
                 h1 {
@@ -177,7 +178,7 @@
                 .nav-bar a {
                     font-size: 18px;
                 }
-                .submit,
+                .submitBtn,
                 .emailInpt,
                 .nameInpt,
                 .phoneInpt,

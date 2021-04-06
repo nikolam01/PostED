@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema({
-
-
     author: {
         type: String,
         trim: true,

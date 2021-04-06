@@ -9,8 +9,6 @@ const Contact = require('./database/Contact');
 
 dotenv.config();
 
-
-
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
@@ -25,7 +23,7 @@ app.use(express.static("client"));
 app.use(express.json());
 
 //-------------axios requests for db to post on main  page-------
-app.get("/api/posts", async(req, res) => {
+app.get("/api/posts", async (req, res) => {
 
     try {
         const allPosts = await Post.find().sort({ _id: -1 });
@@ -44,7 +42,7 @@ app.get("/api/posts", async(req, res) => {
     }
 });
 
-app.post("/api/posts", async(req, res) => {
+app.post("/api/posts", async (req, res) => {
     try {
         const author = req.body.author;
         const text = req.body.text;
@@ -71,7 +69,7 @@ app.post("/api/posts", async(req, res) => {
 });
 //----------------------------------------------------------------------------
 
-app.get("/api/posts/:postId", async(req, res) => { //dve tacke znaci da ce ta vrednost postId biti neka vrednost koja se menja odnosno promenljiva
+app.get("/api/posts/:postId", async (req, res) => { //dve tacke znaci da ce ta vrednost postId biti neka vrednost koja se menja odnosno promenljiva
     try {
 
         const postId = req.params.postId;
@@ -92,12 +90,11 @@ app.get("/api/posts/:postId", async(req, res) => { //dve tacke znaci da ce ta vr
 
 });
 //---------------------------------------HTTP request za postavjanje komentara--------------------------
-app.post("/api/comment", async(req, res) => {
+app.post("/api/comment", async (req, res) => {
     try {
         const postId = req.body.postId;
         const author = req.body.author;
         const text = req.body.text;
-
 
         console.log(postId, author, text);
 
@@ -108,12 +105,10 @@ app.post("/api/comment", async(req, res) => {
             author: author,
             text: text,
             createdAt: new Date(),
-
         };
         post.comments.push(newComment); //ubacivanje podkomentara u komentar
         post.commentsNumber++; //svaki put kada dodamo podkomentar apdejtuje se commentsNumber tj poveca za 1
         const savedPost = await post.save(); //cuvamo izmene u bazi
-
         res.json({
             success: true,
             post: savedPost,
@@ -124,32 +119,24 @@ app.post("/api/comment", async(req, res) => {
             msg: err.message,
         });
     }
-
 });
-
-
 //----------------------------------------Contact strana------------------------------------------------
-app.get('/api/contact', (req, res) => {
+app.get('/api/contacts', async (req, res) => {
     try {
+        const allContacts = await Contact.find().sort({ _id: -1 });
         res.json({
             success: true,
+            contacts: allContacts,
             msg: "Uspesan get request",
-
         });
-
-
     } catch (err) {
         res.json({
-            success: true,
+            success: false,
             msg: err.message,
         })
     }
-
 });
-
-
-
-app.post('/api/contact', async(req, res) => {
+app.post('/api/contacts', async (req, res) => {
     try {
         const name = req.body.name;
         const email = req.body.email;
@@ -157,32 +144,25 @@ app.post('/api/contact', async(req, res) => {
         const message = req.body.message;
 
         const newContact = new Contact({
-            name: name,
-            email: email,
-            phone: phone,
-            message: message,
+            name,
+            email,
+            phone,
+            message,
         });
 
         const savedContact = await newContact.save();
-
         res.json({
             success: true,
-            contact: savedContact,
+            contacts: savedContact,
             msg: 'This is a contact res.json!',
-
-
         });
-
     } catch (err) {
         res.json({
-            success: true,
+            success: false,
             msg: err.message,
         });
-
     }
-
 });
-
 
 //-----------------------------------------------------------------------------------------------------
 

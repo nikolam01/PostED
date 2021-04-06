@@ -23,7 +23,7 @@ async function getData() {
 
 const submitBtn = document.querySelector(".submitBtn");
 
-submitBtn.addEventListener('click', async() => {
+submitBtn.addEventListener('click', async () => {
 
     console.log("kliknuto");
     const inputAuthor = document.querySelector('.input-author');
@@ -43,7 +43,7 @@ submitBtn.addEventListener('click', async() => {
     });
 
     console.log(resp.data);
-
+    alert("Thank you for your submission!");
     location.reload();
 
 });
