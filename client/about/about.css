@@ -1,128 +1,131 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/back.jpg);
-    height: fit-content;
-    background-size: cover;
-    background-position: center;
-    font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/back.jpg);
+  height: fit-content;
+  background-size: cover;
+  background-position: center;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .nav-bar {
-    text-align: right;
-    font-size: 24px;
-    margin: 1% 5%;
+  text-align: right;
+  font-size: 24px;
+  margin: 1% 5%;
 }
 
 .nav-bar a {
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-    margin-right: 5%;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  margin-right: 5%;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-areas: "hd hd hd" "content content img";
-    width: 80%;
-    margin: 2% auto;
-    height: min-content;
-    grid-gap: 5%;
-    padding: 3%;
-    padding-top: 1%;
+  display: grid;
+  grid-template-areas: "hd hd hd" "content content img";
+  width: 80%;
+  margin: 2% auto;
+  height: min-content;
+  grid-gap: 5%;
+  padding: 3%;
+  padding-top: 1%;
 }
 
 .grid-h1 {
-    grid-area: hd;
-    text-align: center;
-    color: white;
-    font-size: 20px;
+  grid-area: hd;
+  text-align: center;
+  color: white;
+  font-size: 20px;
 }
 
 .grid-content {
-    grid-area: content;
-    text-align: justify;
-    border: 3px solid darkblue;
-    padding: 2%;
-    color: white;
-    font-size: 22px;
-    font-weight: 350;
+  grid-area: content;
+  text-align: justify;
+  border: 3px solid darkblue;
+  padding: 2%;
+  color: white;
+  font-size: 22px;
+  font-weight: 350;
 }
 
 .grid-images {
-    grid-area: img;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    cursor: pointer;
+  grid-area: img;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .img1 {
-    width: 100%;
-    border: 3px solid darkblue;
+  width: 100%;
+  border: 3px solid darkblue;
 }
 
 .footer-container {
-    background-color: black;
-    display: grid;
-    grid-template-areas: "social" "txt";
-    height: fit-content;
+  background-color: black;
+  display: grid;
+  grid-template-areas: "social" "txt";
+  height: fit-content;
 }
 
 .social-media {
-    grid-area: social;
-    display: flex;
-    justify-content: space-around;
-    margin: 2% auto;
-    width: 20%;
-    color: white;
+  grid-area: social;
+  display: flex;
+  justify-content: space-around;
+  margin: 2% auto;
+  width: 20%;
+  color: white;
 }
 
 .social-media a {
-    text-decoration: none;
-    font-size: 24px;
-    color: blue;
+  text-decoration: none;
+  font-size: 24px;
+  color: blue;
 }
 
 .footer-txt {
-    grid-area: txt;
-    display: flex;
-    justify-content: center;
-    color: white;
-    margin-bottom: 2%;
+  grid-area: txt;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-bottom: 2%;
 }
 
 .privacy {
-    padding-right: 2%;
+  padding-right: 2%;
 }
 
 .copyright {
-    padding-left: 2%;
+  padding-left: 2%;
 }
 
-@media (max-width:560px) {
-    .nav-bar {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    .nav-bar a {
-        margin-right: 0%;
-    }
-    .grid-container {
-        grid-template-areas: "hd" "content" "img";
-        margin: 5% 1%;
-        width: 98%;
-    }
-    .grid-images {
-        width: 85%;
-        margin: 0% auto;
-    }
-    .social-media {
-        width: 50%;
-    }
+@media (max-width: 560px) {
+  .nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .nav-bar a {
+    margin-right: 0%;
+  }
+  .grid-container {
+    grid-template-areas: "hd" "content" "img";
+    margin: 5% 1%;
+    width: 98%;
+  }
+  .grid-images {
+    width: 85%;
+    margin: 0% auto;
+  }
+  .social-media {
+    width: 50%;
+  }
 }
